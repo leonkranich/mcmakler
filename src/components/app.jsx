@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
+
 import flats from '../../data/flats';
 import FlatList from './flat_list';
+import FlatDetails from './flat_details';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
+      selectedFlat: flats[0],
       flats
      }
+  }
+
+  selectFlat = (index) => {
+    this.setState({ selectedFlat: flats[index] });
   }
   render() { 
     return ( 
@@ -16,12 +23,17 @@ class App extends Component {
           <div className="col-12 col-lg-4">
             <FlatList
               flats={this.state.flats}
-              // selectedFlat={this.state.selectedFlat}
+              selectedFlat={this.state.selectedFlat}
               selectFlat={this.selectFlat}
             />
           </div>
           <div className="col-12 col-lg-4">
-            <h1>You</h1>
+            <FlatDetails
+              flat={this.state.selectedFlat}
+              // key={this.state.selectedFlat.price}
+              // index={this.state.selectedFlat.index}
+            //  selectFlat={props.selectFlat}
+            />
           </div>
           <div className="col-12 col-lg-4">
             <h1>World</h1>

@@ -7,7 +7,7 @@ const FlatList = (props) => {
       return (
         <Flat
           flat={flat}
-          key={flat.lat}
+          key={flat.price}
           // selected={flat.name === props.selectedFlat.name}
           index={index}
           selectFlat={props.selectFlat}
