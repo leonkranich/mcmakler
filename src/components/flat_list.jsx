@@ -11,6 +11,7 @@ const FlatList = (props) => {
           // selected={flat.name === props.selectedFlat.name}
           index={index}
           selectFlat={props.selectFlat}
+          newFlat={props.newFlat}
         />
       );
     });

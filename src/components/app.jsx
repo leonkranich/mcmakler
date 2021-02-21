@@ -14,8 +14,14 @@ class App extends Component {
      }
   }
 
+  newFlat = () => {
+    this.setState(previousState => ({
+      flats: [...previousState.flats, flats[0]]
+  }));
+  }
+
   selectFlat = (index) => {
-    this.setState({ selectedFlat: flats[index] });
+    this.setState({ selectedFlat: flats[index] }); 
   }
   render() { 
     return ( 
@@ -26,6 +32,7 @@ class App extends Component {
               flats={this.state.flats}
               selectedFlat={this.state.selectedFlat}
               selectFlat={this.selectFlat}
+              newFlat={this.newFlat}
             />
           </div>
           <div className="col-12 col-lg-4">
