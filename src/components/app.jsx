@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import flats from '../../data/flats';
 import FlatList from './flat_list';
 import FlatDetails from './flat_details';
+import Form from './form';
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class App extends Component {
             />
           </div>
           <div className="col-12 col-lg-4">
-            <h1>World</h1>
+            <Form />
           </div>
           
         </div>
